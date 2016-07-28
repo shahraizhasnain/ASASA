@@ -23,19 +23,8 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-});
+})
 
-.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
 
-    .state('app', {
-    url: '/app',
-    abstract: true,
-    templateUrl: 'templates/Login.html',
-    controller: 'AppCtrl'
-  })
-
-    $urlRouterProvider.otherwise('/app/Login');
-  });
 
 
