@@ -1,0 +1,44 @@
+/* Empty. Add your own CSS if you like */
+.img{
+
+	margin-top: 5%;
+	margin-left: 30%;
+	
+}
+#b{
+
+	margin-top: 5%;
+	margin-left: 25%;
+}
+
+/*#up{
+	margin-top: 5%;
+	margin-left: 30%;
+	margin-right: auto;
+	margin-bottom: auto;
+}*/
+
+.upload{
+	height: 75%;
+	width: 75%;
+	margin-top: 10%;
+}
+
+.bg{
+
+	background-image: url(../img/carr.jpg);
+	background-size: contain;
+
+}
+
+
+#label{
+	background: transparent;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-color: #fff;
+
+}
+
