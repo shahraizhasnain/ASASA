@@ -1,52 +1,17 @@
-/* Empty. Add your own CSS if you like */
-.img{
+#h2{
 
-	margin-top: 5%;
-	margin-left: 30%;
-	
+margin-top: 5%;
+margin-left: 16%;
+color: #ff9933;
+
 }
-#b{
 
+#h{
 	margin-top: 5%;
+	margin-left: 12%;
+	color: #4dffff;
+}
+
+#c{
 	margin-left: 25%;
 }
-
-/*#up{
-	margin-top: 5%;
-	margin-left: 30%;
-	margin-right: auto;
-	margin-bottom: auto;
-}*/
-
-.upload{
-	height: 75%;
-	width: 75%;
-	margin-top: 10%;
-}
-
-.bg{
-
-	background-image: url(../img/carr.jpg);
-	background-size: contain;
-	background-repeat: no-repeat;
-
-}
-
-
-#label{
-	background: transparent;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	border-color: #fff;
-
-}
-
- #footer {
-    position : absolute;
-    bottom : 0;
-    height: 40px;
-    margin-top: 40px;
-  }
-
