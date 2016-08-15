@@ -20,3 +20,10 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   
 })
+
+
+.controller('PlaylistCtrl', function($scope) {
+
+  
+})
+
