@@ -61,4 +61,10 @@ color: #ff9933;
 
 }
 
+div {
+    background: url(carr.jpg);
+    background-size: 80px 60px;
+    background-repeat: no-repeat;
+}
+
 
