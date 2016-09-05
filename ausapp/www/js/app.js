@@ -55,8 +55,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+    .state('app.categories', {
+      url: '/categories',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/categories.html'
+        }
+      }
+    })
 
- 
+
 
   .state('app.location', {
       url: '/location',
