@@ -36,7 +36,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
     .state('signup', {
     url: '/signup',
-    templateUrl: 'templates/signup.html'
+    templateUrl: 'templates/signup.html',
   })
 
 
@@ -55,8 +55,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-    
-  .state('app.categories', {
+    .state('app.categories', {
       url: '/categories',
       views: {
         'menuContent': {
@@ -74,8 +73,28 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: 'templates/location.html'
         }
       }
-    });
-  
+    })
+    .state('app.dashboard', {
+      url: '/dashboard',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/dashboard.html',
+          controller: 'PlaylistCtrl'
+        }
+      }
+    })
+
+
+
+  .state('app.single', {
+    url: '/playlists/:playlistId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'PlaylistCtrl'
+      }
+    }
+  });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 });
