@@ -57,8 +57,47 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
+      .state('app.babycare', {
+          url: '/babycare',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/babycare.html'
+              }
+          }
+      })
+      .state('app.pharmacy', {
+          url: '/pharmacy',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/pharmacy.html'
+              }
+          }
+      })
+      .state('app.frozenfoods', {
+          url: '/frozenfoods',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/frozenfoods.html'
+              }
+          }
+      })
+      .state('app.beverages', {
+          url: '/beverages',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/beverages.html'
+              }
+          }
+      })
 
-  .state('app.stores', {
+      .state('app.fashion', {
+          url: '/fashion',
+          views: {
+              'menuContent': {
+                  templateUrl: 'templates/fashion.html'
+              }
+          }
+      })  .state('app.stores', {
     url: '/stores',
     views: {
       'menuContent': {
