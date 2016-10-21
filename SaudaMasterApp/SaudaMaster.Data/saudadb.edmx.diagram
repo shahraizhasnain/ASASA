@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b8f6bba2ff74c748099236cd3e623f3" Name="Diagram1">
+        <EntityTypeShape EntityType="saudadbModel.Brand" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.Category" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.Customer" Width="1.5" PointX="1.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.CustomerStoreRelation" Width="1.5" PointX="6" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.Item" Width="1.5" PointX="7.5" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.ListDetail" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.ListHeader" Width="1.5" PointX="1.5" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.ListStoreAssociation" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.Store" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.SubCategory" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="saudadbModel.sysdiagram" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="saudadbModel.FK_Item_Brand" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_Category_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_Item_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_SubCategory_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_CustomerStoreRelation_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_ListHeader_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_CustomerStoreRelation_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_Item_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_Item_SubCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_ListDetail_ListHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_ListStoreAssociation_ListDetail" ManuallyRouted="false" />
+        <AssociationConnector Association="saudadbModel.FK_ListStoreAssociation_Store" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

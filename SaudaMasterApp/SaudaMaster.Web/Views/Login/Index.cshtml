@@ -1,0 +1,38 @@
+﻿@model SaudaMaster.SharedModel.LoginViewModel
+@{
+    Layout = "~/Views/Shared/Blank.cshtml";
+    ViewBag.Title = "Login";
+}
+<body class="login-body">
+
+    <div class="container">
+
+
+        @using (Html.BeginForm(new { @class = "form-signin" }))
+        {
+            <div class="form-signin" action="index.html">
+                <h2 class="form-signin-heading">sign in now</h2>
+                <div class="login-wrap">
+                    @*<input type="text" class="form-control" placeholder="User ID" autofocus>*@
+                    @Html.TextBoxFor(model => model.StoreUsername, new { @class = "form-control", @placeholder = "Enter Username", @id = "txtusername" })
+                    @Html.ValidationMessageFor(model => model.StoreUsername)
+                    @*<input type="password" class="form-control" placeholder="Password">*@
+                    @Html.TextBoxFor(model => model.StorePassword, new { @class = "form-control", @placeholder = "Enter Password", @id = "txtpassword" })
+                    @Html.ValidationMessageFor(model => model.StorePassword)
+                    <label class="checkbox">
+                        <input type="checkbox" value="remember-me"> Remember me
+                        <span class="pull-right">
+                            <a data-toggle="modal" href="#myModal"> Forgot Password?</a>
+                        </span>
+                    </label>
+                    <button class="btn btn-lg btn-warning btn-block" style="margin-bottom:10px;" type="submit">Sign in</button>
+                    <div class="registration">
+                        Don't have an account yet?
+                        <a class="" href="registration.html">
+                            Apply for one !
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

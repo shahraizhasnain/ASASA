@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="saudadbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="BrandID" />
+    </Key>
+    <Property Name="BrandID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrandName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrandTitle" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrandDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="BrandImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryDisplayName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerContact" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerAddress1" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerAddress2" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerNIC" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerCode" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerUserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerPassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerLastLogin" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerSecurityCode" Type="varbinary" MaxLength="50" Nullable="false" />
+    <Property Name="CustomerActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerStoreRelation">
+    <Key>
+      <PropertyRef Name="CustomerStoreID" />
+    </Key>
+    <Property Name="CustomerStoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="RewardCheck" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Item">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryID" Type="int" Nullable="false" />
+    <Property Name="BrandID" Type="int" Nullable="false" />
+    <Property Name="ItemName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemDescription" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemPrice" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemAvailability" Type="bit" Nullable="false" />
+    <Property Name="ItemDiscountPercentage" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ItemImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListDetail">
+    <Key>
+      <PropertyRef Name="ListDetailID" />
+    </Key>
+    <Property Name="ListDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListHeaderID" Type="int" Nullable="false" />
+    <Property Name="ItemID" Type="int" Nullable="false" />
+    <Property Name="ItemQuantity" Type="int" Nullable="false" />
+    <Property Name="ItemTotal" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ItemActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListHeader">
+    <Key>
+      <PropertyRef Name="ListHeaderID" />
+    </Key>
+    <Property Name="ListHeaderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ListName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ListCreationDate" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListStoreAssociation">
+    <Key>
+      <PropertyRef Name="ListStoreID" />
+    </Key>
+    <Property Name="ListStoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListDetailID" Type="int" Nullable="false" />
+    <Property Name="StoreID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StoreAddressPrimary" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreAddressSecondary" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreContact" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StoreContactPerson" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StoreEstablishmentDate" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="StoreDescription" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="StoreUsername" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StorePassword" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="StoreTitle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="StoreLogo" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubCategory">
+    <Key>
+      <PropertyRef Name="SubCategoryID" />
+    </Key>
+    <Property Name="SubCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="SubCategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubCategoryDisplayName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubCategoryImage" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Category_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerStoreRelation_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="CustomerStoreRelation" Type="Self.CustomerStoreRelation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="CustomerStoreRelation">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerStoreRelation_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="CustomerStoreRelation" Type="Self.CustomerStoreRelation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="CustomerStoreRelation">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Brand">
+    <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brand">
+        <PropertyRef Name="BrandID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="BrandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Item_SubCategory">
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="1" />
+    <End Role="Item" Type="Self.Item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubCategory">
+        <PropertyRef Name="SubCategoryID" />
+      </Principal>
+      <Dependent Role="Item">
+        <PropertyRef Name="SubCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListDetail_ListHeader">
+    <End Role="ListHeader" Type="Self.ListHeader" Multiplicity="1" />
+    <End Role="ListDetail" Type="Self.ListDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListHeader">
+        <PropertyRef Name="ListHeaderID" />
+      </Principal>
+      <Dependent Role="ListDetail">
+        <PropertyRef Name="ListHeaderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListHeader_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="ListHeader" Type="Self.ListHeader" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="ListHeader">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListStoreAssociation_ListDetail">
+    <End Role="ListDetail" Type="Self.ListDetail" Multiplicity="1" />
+    <End Role="ListStoreAssociation" Type="Self.ListStoreAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListDetail">
+        <PropertyRef Name="ListDetailID" />
+      </Principal>
+      <Dependent Role="ListStoreAssociation">
+        <PropertyRef Name="ListDetailID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListStoreAssociation_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="ListStoreAssociation" Type="Self.ListStoreAssociation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreID" />
+      </Principal>
+      <Dependent Role="ListStoreAssociation">
+        <PropertyRef Name="StoreID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCategory_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="SubCategory" Type="Self.SubCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="SubCategory">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="saudadbModelStoreContainer">
+    <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerStoreRelation" EntityType="Self.CustomerStoreRelation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListDetail" EntityType="Self.ListDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListHeader" EntityType="Self.ListHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListStoreAssociation" EntityType="Self.ListStoreAssociation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubCategory" EntityType="Self.SubCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Category_Store" Association="Self.FK_Category_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Category" EntitySet="Category" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerStoreRelation_Customer" Association="Self.FK_CustomerStoreRelation_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="CustomerStoreRelation" EntitySet="CustomerStoreRelation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerStoreRelation_Store" Association="Self.FK_CustomerStoreRelation_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="CustomerStoreRelation" EntitySet="CustomerStoreRelation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Brand" Association="Self.FK_Item_Brand">
+      <End Role="Brand" EntitySet="Brand" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Category" Association="Self.FK_Item_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_Store" Association="Self.FK_Item_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Item_SubCategory" Association="Self.FK_Item_SubCategory">
+      <End Role="SubCategory" EntitySet="SubCategory" />
+      <End Role="Item" EntitySet="Item" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListDetail_ListHeader" Association="Self.FK_ListDetail_ListHeader">
+      <End Role="ListHeader" EntitySet="ListHeader" />
+      <End Role="ListDetail" EntitySet="ListDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListHeader_Customer" Association="Self.FK_ListHeader_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ListHeader" EntitySet="ListHeader" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListStoreAssociation_ListDetail" Association="Self.FK_ListStoreAssociation_ListDetail">
+      <End Role="ListDetail" EntitySet="ListDetail" />
+      <End Role="ListStoreAssociation" EntitySet="ListStoreAssociation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListStoreAssociation_Store" Association="Self.FK_ListStoreAssociation_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="ListStoreAssociation" EntitySet="ListStoreAssociation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCategory_Category" Association="Self.FK_SubCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="SubCategory" EntitySet="SubCategory" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
