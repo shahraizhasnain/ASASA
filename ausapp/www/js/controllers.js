@@ -22,8 +22,14 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('PlaylistCtrl', function($scope) {
+// .controller('PlaylistCtrl', function($scope) {
 
   
-})
+// })
+// .controller('api', function($scope, $http){
 
+//   $scope.getdata = function(){
+//     $http.get('http://echo.jsontest.com/firstname/Nic/lastname/Raboy/state/California', {params : {'key1':'value', 'key2':'value'}})
+//   }
+
+// })
